@@ -5,7 +5,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,12 +31,15 @@ class EdifyGenerator(edify_generator.EdifyGenerator):
       self.script.append(
             ('package_extract_file("busybox", "/tmp/busybox");\n'
              'set_perm(0, 0, 0777, "/tmp/busybox");'))
-
-      self.script.append('package_extract_file("boot.img", "/tmp/boot.img");')
+      self.script.append(
+            ('package_extract_file("redbend_ua", "/tmp/redbend_ua");\n'
+             'set_perm(0, 0, 0777, "/tmp/redbend_ua");'))
+ 
+      self.script.append('package_extract_file("zImage", "/tmp/zImage");')
 
     def RunBackup(self, command):
       edify_generator.EdifyGenerator.RunBackup(self, command)
 
-    def WriteRawImage(self, image, device):
+    def RedbendUA(self, image, device):
       self.script.append(
-          ('run_program("write_raw_image", "' + image + '", "' + device + '");'))
+          ('run_program("/tmp/redbend_ua", "restore", "' + image + '", "' + device + '");'))
