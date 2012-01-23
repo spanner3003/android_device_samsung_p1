@@ -47,6 +47,7 @@ loglevel 9
     insmod /lib/modules/j4fs.ko
     insmod /lib/modules/fuse.ko
     insmod /lib/modules/storage.ko
+    insmod /lib/modules/nls_utf8.ko
 
 # Backwards Compatibility
     symlink /system/etc /etc
