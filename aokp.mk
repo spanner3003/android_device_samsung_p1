@@ -2,7 +2,7 @@ $(call inherit-product, device/samsung/galaxytab/full_galaxytab.mk)
 
 PRODUCT_RELEASE_NAME := GalaxyTab
 # Inherit some common AOKP stuff.
-$(call inherit-product, vendor/aokp/products/common_tablet.mk)
+$(call inherit-product, vendor/aokp/products/common.mk)
 
 # Inherit some common AOKP stuff.
 $(call inherit-product, vendor/aokp/products/common_versions.mk)
