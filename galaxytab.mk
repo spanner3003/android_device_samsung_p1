@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#	http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,13 +14,13 @@
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-        LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+ 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
-        LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+ 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+	$(LOCAL_KERNEL):kernel
 
 # It's a Tablet!
 $(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
@@ -30,7 +30,7 @@ $(call inherit-product, vendor/aokp/products/common_tablet.mk)
 $(call inherit-product-if-exists, vendor/samsung/galaxytab/galaxytab-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS := \
-    $(LOCAL_PATH)/overlay
+	$(LOCAL_PATH)/overlay
 
 # Setup device specific product configuration.
 PRODUCT_NAME := aokp_galaxytab
@@ -46,9 +46,9 @@ TARGET_OTA_ASSERT_SKIP := true
 -include vendor/aokp/products/common_versions.mk
 
 # Copy maguro specific prebuilt files
-PRODUCT_COPY_FILES +=  \
-    vendor/aokp/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip \
-    vendor/aokp/proprietary/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so
+PRODUCT_COPY_FILES += \
+	vendor/aokp/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip \
+	vendor/aokp/proprietary/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
@@ -77,7 +77,7 @@ PRODUCT_PACKAGES := \
 
 # Utilities
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxytab/prebuilt/mke2fs:utilities/mke2fs
+	device/samsung/galaxytab/prebuilt/mke2fs:utilities/mke2fs
 
 # utils
 PRODUCT_PACKAGES += \
@@ -131,7 +131,7 @@ PRODUCT_COPY_FILES += \
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
-        device/samsung/galaxytab/prebuilt/usr/idc/AT42QT602240_Touchscreen.idc:system/usr/idc/AT42QT602240_Touchscreen.idc
+	device/samsung/galaxytab/prebuilt/usr/idc/AT42QT602240_Touchscreen.idc:system/usr/idc/AT42QT602240_Touchscreen.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -139,7 +139,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
 	frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
 	frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-        frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+	frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
 	frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
@@ -150,7 +150,7 @@ PRODUCT_COPY_FILES += \
 
 # vold
 PRODUCT_COPY_FILES += \
-        device/samsung/galaxytab/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+	device/samsung/galaxytab/prebuilt/etc/vold.fstab:system/etc/vold.fstab
 
 # firmware
 PRODUCT_COPY_FILES += \
@@ -164,36 +164,36 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-       ro.telephony.call_ring.multiple=false \
-       ro.telephony.call_ring.delay=3000 \
-       ro.telephony.call_ring.absent=true \
-       mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
-       ro.telephony.ril.v3=datacall,icccardstatus \
-       ro.telephony.ril_class=SamsungRIL \
-       ro.ril.enable.managed.roaming=1 \
-       ro.ril.oem.nosim.ecclist=911,112,999,000,08,118,120,122,110,119,995 \
-       ro.ril.emc.mode=2 \
-       ro.sf.hwrotation=90 
+	ro.telephony.call_ring.multiple=false \
+	ro.telephony.call_ring.delay=3000 \
+	ro.telephony.call_ring.absent=true \
+	mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
+	ro.telephony.ril.v3=datacall,icccardstatus \
+	ro.telephony.ril_class=SamsungRIL \
+	ro.ril.enable.managed.roaming=1 \
+	ro.ril.oem.nosim.ecclist=911,112,999,000,08,118,120,122,110,119,995 \
+	ro.ril.emc.mode=2 \
+	ro.sf.hwrotation=90 
 
 # These are the hardware-specific settings that are stored in system properties.
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
-       wifi.supplicant_scan_interval=200
+	wifi.supplicant_scan_interval=200
 
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.com.google.locationfeatures=1 \
-        ro.com.google.networklocation=1
+	ro.com.google.locationfeatures=1 \
+	ro.com.google.networklocation=1
 
 # Extended JNI checks
 # The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
 # before they have a chance to cause problems.
 # Default=true for development builds, set by android buildsystem.
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.kernel.android.checkjni=0 \
-    dalvik.vm.checkjni=false
+	ro.kernel.android.checkjni=0 \
+	dalvik.vm.checkjni=false
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -204,19 +204,19 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # kernel modules for ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/samsung/galaxytab/modules/ramdisk,root/lib/modules)
+	$(call find-copy-subdir-files,*,device/samsung/galaxytab/modules/ramdisk,root/lib/modules)
 
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/samsung/galaxytab/modules/ramdisk,recovery/root/lib/modules)
+	$(call find-copy-subdir-files,*,device/samsung/galaxytab/modules/ramdisk,recovery/root/lib/modules)
 
 # other kernel modules not in ramdisk
 PRODUCT_COPY_FILES += $(foreach module,\
-    $(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/galaxytab/modules/*.ko)),\
-    $(module):system/lib/modules/$(notdir $(module)))
+	$(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/galaxytab/modules/*.ko)),\
+	$(module):system/lib/modules/$(notdir $(module)))
 
 # rfs converter
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxytab/prebuilt/sbin/fat.format:root/sbin/fat.format
+	device/samsung/galaxytab/prebuilt/sbin/fat.format:root/sbin/fat.format
 
 # copy the filesystem converter
 PRODUCT_COPY_FILES += \
