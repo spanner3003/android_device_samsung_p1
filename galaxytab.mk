@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES += \
 # It's a Tablet!
 $(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
 
-$(call inherit-product, vendor/aokp/products/common_tablet.mk)
+$(call inherit-product, vendor/aokp/products/common.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/galaxytab/galaxytab-vendor.mk)
 
