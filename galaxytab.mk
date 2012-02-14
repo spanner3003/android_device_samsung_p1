@@ -12,43 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-ifeq ($(TARGET_PREBUILT_KERNEL),)
- 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
- 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_KERNEL):kernel
-
-# It's a Tablet!
-$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
-
-$(call inherit-product, vendor/aokp/products/common.mk)
-
-$(call inherit-product-if-exists, vendor/samsung/galaxytab/galaxytab-vendor.mk)
-
 DEVICE_PACKAGE_OVERLAYS := \
 	$(LOCAL_PATH)/overlay
-
-# Setup device specific product configuration.
-PRODUCT_NAME := aokp_galaxytab
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := galaxytab
-PRODUCT_MODEL := GT-P1000
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=GT-P7510 BUILD_ID=MR1 BUILD_FINGERPRINT=samsung/cm_galaxytab/galaxytab:4.0.3/MR1/eng.tsv.20120122.031604:userdebug/test-keys PRIVATE_BUILD_DESC="cm_galaxytab-userdebug 4.0.3 MR1 eng.tsv.20120122.031604 test-keys"
-
-TARGET_OTA_ASSERT_SKIP := true
-
-# Inherit common build.prop overrides
--include vendor/aokp/products/common_versions.mk
-
-# Copy maguro specific prebuilt files
-PRODUCT_COPY_FILES += \
-	vendor/aokp/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip \
-	vendor/aokp/proprietary/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
@@ -200,7 +165,11 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp,adb
+	persist.sys.usb.config=mass_storage,adb
+
+# keep dalvik cache on /data
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dexopt-data-only=1
 
 # kernel modules for ramdisk
 PRODUCT_COPY_FILES += \
@@ -218,6 +187,40 @@ PRODUCT_COPY_FILES += $(foreach module,\
 PRODUCT_COPY_FILES += \
 	device/samsung/galaxytab/prebuilt/sbin/fat.format:root/sbin/fat.format
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+ 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+else
+ 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel
+
+# It's a Tablet!
+$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
+
+$(call inherit-product, vendor/aokp/products/common.mk)
+
+$(call inherit-product-if-exists, vendor/samsung/galaxytab/galaxytab-vendor.mk)
+
 # copy the filesystem converter
 PRODUCT_COPY_FILES += \
 	device/samsung/galaxytab/updater.sh:updater.sh
+
+# Setup device specific product configuration.
+#PRODUCT_NAME := aokp_galaxytab
+#PRODUCT_BRAND := google
+#PRODUCT_DEVICE := galaxytab
+#PRODUCT_MODEL := GT-P1000
+#PRODUCT_MANUFACTURER := samsung
+#PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=GT-P1000 TARGET_DEVICE=GT-P1000 BUILD_ID=GINGERBREAD BUILD_FINGERPRINT=samsung/GT-P1000/GT-P1000:2.3.5/GINGERBREAD/XWJQ3:user/release-keys PRIVATE_BUILD_DESC="GT-P1000-user 2.3.5 GINGERBREAD XWJQ3 release-keys"
+
+#TARGET_OTA_ASSERT_SKIP := true
+
+# Inherit common build.prop overrides
+-include vendor/aokp/products/common_versions.mk
+
+# Copy maguro specific prebuilt files
+PRODUCT_COPY_FILES += \
+	vendor/aokp/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip \
+	vendor/aokp/proprietary/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so
