@@ -22,7 +22,7 @@ LOCAL_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file_
 RELEASETOOLS_DIR = os.path.abspath(os.path.join(LOCAL_DIR, '../../../build/tools/releasetools'))
 TARGET_DIR = os.getenv('OUT')
 UTILITIES_DIR = os.path.join(TARGET_DIR, 'utilities')
-KERNEL_DIR = os.path.abspath(os.path.join(LOCAL_DIR, '../../cm9/kernel/samsung/p1'))
+KERNEL_DIR = os.path.abspath(os.path.join(LOCAL_DIR, '../../../../cm9/kernel/samsung/p1'))
 
 # Add releasetools directory to python path
 sys.path.append(RELEASETOOLS_DIR)
