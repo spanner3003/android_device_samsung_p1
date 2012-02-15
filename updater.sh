@@ -22,8 +22,8 @@ export PATH=/:/sbin:/system/xbin:/system/bin:/tmp:$PATH
 # make sure sdcard is mounted
 if ! /tmp/busybox grep -q /sdcard /proc/mounts ; then
     /tmp/busybox mkdir -p /sdcard
-    /tmp/busybox umount -l /dev/block/mmcblk1p1
-    if ! /tmp/busybox mount -t vfat /dev/block/mmcblk1p1 /sdcard ; then
+    /tmp/busybox umount -l /dev/block/mmcblk0p1
+    if ! /tmp/busybox mount -t vfat /dev/block/mmcblk0p1 /sdcard ; then
         /tmp/busybox echo "Cannot mount sdcard."
         exit 1
     fi
@@ -38,10 +38,9 @@ exec >> /sdcard/cyanogenmod.log 2>&1
 #
 # flash kernel and recovery
 #
-/tmp/bmlwrite /tmp/boot.img /dev/block/bml7
-
 # Don't Flash recovery for now
-#/tmp/bmlwrite /tmp/boot.img /dev/block/bml8
+#/tmp/bmlwrite /tmp/boot.img /dev/block/bml7
+/tmp/bmlwrite /tmp/boot.img /dev/block/bml8
 
 #
 # filesystem conversion
@@ -54,9 +53,9 @@ if ! /tmp/busybox mount -t ext4 /dev/block/stl9 /system ; then
 fi
 
 # format cache if not ext4
-if ! /tmp/busybox mount -t ext4 /dev/block/mmcblk0p1 /cache ; then
+if ! /tmp/busybox mount -t ext4 /dev/block/stl11 /cache ; then
     /tmp/busybox umount /cache
-    /tmp/make_ext4fs -b 4096 -g 32768 -i 8192 -I 256 -a /cache dev/block/mmcblk0p1
+    /tmp/make_ext4fs -b 4096 -g 32768 -i 8192 -I 256 -a /cache dev/block/stl11
 fi
 
 # format data if not ext4
