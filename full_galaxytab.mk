@@ -33,9 +33,10 @@ PRODUCT_LOCALES += hdpi
 PRODUCT_AAPT_CONFIG := large hdpi
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := full_galaxytab
+PRODUCT_NAME := aokp_galaxytab
 PRODUCT_DEVICE := galaxytab
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-P1000
 
+PRODUCT_RELEASE_NAME := GalaxyTab

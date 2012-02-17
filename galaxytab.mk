@@ -219,3 +219,11 @@ $(call inherit-product-if-exists, vendor/samsung/galaxytab/galaxytab-vendor.mk)
 
 # It's a Tablet!
 $(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
+
+# Common AOKP overrides
+-include vendor/aokp/products/common_versions.mk
+
+# Copy prebuilts
+PRODUCT_COPY_FILES +=  \
+    vendor/aokp/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip \
+    vendor/aokp/proprietary/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so
