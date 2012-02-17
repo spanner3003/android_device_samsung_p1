@@ -223,4 +223,3 @@ PRODUCT_COPY_FILES += \
 # Copy maguro specific prebuilt files
 PRODUCT_COPY_FILES += \
 	vendor/aokp/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip \
-	vendor/aokp/proprietary/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so
