@@ -36,21 +36,21 @@ mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE
 
 # Live wallpaper packages and Themes and some CM Packages
 PRODUCT_PACKAGES += \\
-    VideoEditor \\
-    VoiceDialer \\
-    Basic \\
-    HoloSpiralWallpaper \\
-    MagicSmokeWallpapers \\
-    NoiseField \\
-    Galaxy4 \\
-    LiveWallpapers \\
-    LiveWallpapersPicker \\
-    VisualizationWallpapers \\
-    PhaseBeam
+	VideoEditor \\
+	VoiceDialer \\
+	Basic \\
+	HoloSpiralWallpaper \\
+	MagicSmokeWallpapers \\
+	NoiseField \\
+	Galaxy4 \\
+	LiveWallpapers \\
+	LiveWallpapersPicker \\
+	VisualizationWallpapers \\
+	PhaseBeam
 
 # Publish that we support the live wallpaper feature.
 PRODUCT_COPY_FILES := \\
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
+	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
 \$(call inherit-product, vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF

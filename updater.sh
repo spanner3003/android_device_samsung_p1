@@ -38,7 +38,8 @@ exec >> /sdcard/cyanogenmod.log 2>&1
 #
 # flash kernel and recovery
 #
-# /tmp/bmlwrite /tmp/boot.img /dev/block/bml7
+# Don't Flash recovery for now
+#/tmp/bmlwrite /tmp/boot.img /dev/block/bml7
 /tmp/bmlwrite /tmp/boot.img /dev/block/bml8
 
 #
