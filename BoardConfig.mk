@@ -45,7 +45,7 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
-TARGET_RECOVERY_INITRC := device/samsung/galaxytab/recovery.rc
+TARGET_RECOVERY_INITRC := device/samsung/p1/recovery.rc
 
 TARGET_BOARD_PLATFORM := s5pc110
 TARGET_BOARD_PLATFORM_GPU := POWERVR_SGX540_120
@@ -54,8 +54,8 @@ TARGET_BOOTLOADER_BOARD_NAME := s5pc110
 TARGET_PROVIDES_LIBAUDIO := true
 
 # Releasetools
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/galaxytab/releasetools/galaxytab_ota_from_target_files
-TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/galaxytab/releasetools/galaxytab_img_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/p1/releasetools/galaxytab_ota_from_target_files
+TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/p1/releasetools/galaxytab_img_from_target_files
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -88,7 +88,7 @@ BOARD_CAMERA_DEVICE := /dev/video0
 BOARD_SECOND_CAMERA_DEVICE := /dev/video2
 
 # OpenGL stuff
-BOARD_EGL_CFG := device/samsung/galaxytab/prebuilt/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/samsung/p1/prebuilt/lib/egl/egl.cfg
 #BOARD_USES_LEGACY_EGL := true
 USE_OPENGL_RENDERER := true
 
@@ -104,7 +104,7 @@ BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_BASE := 0x32000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 init=/init no_console_suspend
-TARGET_PREBUILT_KERNEL := device/samsung/galaxytab/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/p1/kernel
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 7864320
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 336068608
@@ -120,9 +120,9 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxytab/shbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/p1/shbootimg.mk
 TARGET_RECOVERY_PRE_COMMAND := "echo 1 > /cache/.startrecovery; sync; echo "
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/galaxytab/recovery/graphics.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/p1/recovery/graphics.c
 
 TARGET_OTA_ASSERT_DEVICE := galaxytab,GT-P1000
 

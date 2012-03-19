@@ -17,23 +17,23 @@ DEVICE_PACKAGE_OVERLAYS := \
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
-	device/samsung/galaxytab/prebuilt/etc/asound.conf:system/etc/asound.conf \
-	device/samsung/galaxytab/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
-	device/samsung/galaxytab/prebuilt/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
+	device/samsung/p1/prebuilt/etc/asound.conf:system/etc/asound.conf \
+	device/samsung/p1/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
+	device/samsung/p1/prebuilt/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxytab/init.rc:root/init.rc \
-	device/samsung/galaxytab/init.s5pc110.rc:root/init.s5pc110.rc \
-	device/samsung/galaxytab/init.s5pc110.usb.rc:root/init.s5pc110.usb.rc \
-	device/samsung/galaxytab/ueventd.rc:root/ueventd.rc \
-	device/samsung/galaxytab/lpm.rc:root/lpm.rc
+	device/samsung/p1/init.rc:root/init.rc \
+	device/samsung/p1/init.s5pc110.rc:root/init.s5pc110.rc \
+	device/samsung/p1/init.s5pc110.usb.rc:root/init.s5pc110.usb.rc \
+	device/samsung/p1/ueventd.rc:root/ueventd.rc \
+	device/samsung/p1/lpm.rc:root/lpm.rc
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxytab/prebuilt/usr/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
-	device/samsung/galaxytab/prebuilt/usr/keylayout/p1_keyboard.kl:system/usr/keylayout/p1_keyboard.kl \
-	device/samsung/galaxytab/prebuilt/usr/keylayout/AT42QT602240_Touchscreen.kl:system/usr/keylayout/AT42QT602240_Touchscreen.kl
+	device/samsung/p1/prebuilt/usr/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+	device/samsung/p1/prebuilt/usr/keylayout/p1_keyboard.kl:system/usr/keylayout/p1_keyboard.kl \
+	device/samsung/p1/prebuilt/usr/keylayout/AT42QT602240_Touchscreen.kl:system/usr/keylayout/AT42QT602240_Touchscreen.kl
 
 # Filesystem management tools
 PRODUCT_PACKAGES := \
@@ -42,7 +42,7 @@ PRODUCT_PACKAGES := \
 
 # Utilities
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxytab/prebuilt/mke2fs:utilities/mke2fs
+    device/samsung/p1/prebuilt/mke2fs:utilities/mke2fs
 
 # utils
 PRODUCT_PACKAGES += \
@@ -74,8 +74,8 @@ PRODUCT_PACKAGES += \
 
 # These are the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxytab/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry \
-	device/samsung/galaxytab/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
+	device/samsung/p1/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry \
+	device/samsung/p1/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # These are the OpenMAX IL modules
 PRODUCT_PACKAGES += \
@@ -96,7 +96,7 @@ PRODUCT_COPY_FILES += \
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
-        device/samsung/galaxytab/prebuilt/usr/idc/AT42QT602240_Touchscreen.idc:system/usr/idc/AT42QT602240_Touchscreen.idc
+        device/samsung/p1/prebuilt/usr/idc/AT42QT602240_Touchscreen.idc:system/usr/idc/AT42QT602240_Touchscreen.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -118,18 +118,18 @@ PRODUCT_COPY_FILES += \
 
 # vold
 PRODUCT_COPY_FILES += \
-        device/samsung/galaxytab/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+        device/samsung/p1/prebuilt/etc/vold.fstab:system/etc/vold.fstab
 
 # firmware
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxytab/prebuilt/firmware/CE147F00.bin:system/vendor/firmware/CE147F00.bin \
-	device/samsung/galaxytab/prebuilt/firmware/CE147F01.bin:system/vendor/firmware/CE147F01.bin \
-	device/samsung/galaxytab/prebuilt/firmware/CE147F02.bin:system/vendor/firmware/CE147F02.bin \
-	device/samsung/galaxytab/prebuilt/firmware/CE147F03.bin:system/vendor/firmware/CE147F03.bin
+	device/samsung/p1/prebuilt/firmware/CE147F00.bin:system/vendor/firmware/CE147F00.bin \
+	device/samsung/p1/prebuilt/firmware/CE147F01.bin:system/vendor/firmware/CE147F01.bin \
+	device/samsung/p1/prebuilt/firmware/CE147F02.bin:system/vendor/firmware/CE147F02.bin \
+	device/samsung/p1/prebuilt/firmware/CE147F03.bin:system/vendor/firmware/CE147F03.bin
 
 # Credits
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxytab/Credits-CM.html:system/etc/Credits-CM.html
+	device/samsung/p1/Credits-CM.html:system/etc/Credits-CM.html
 
 # Tablet!
 PRODUCT_CHARACTERISTICS := tablet
@@ -185,26 +185,26 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # kernel modules for ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/samsung/galaxytab/modules/ramdisk,root/lib/modules)
+    $(call find-copy-subdir-files,*,device/samsung/p1/modules/ramdisk,root/lib/modules)
 
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/samsung/galaxytab/modules/ramdisk,recovery/root/lib/modules)
+    $(call find-copy-subdir-files,*,device/samsung/p1/modules/ramdisk,recovery/root/lib/modules)
 
 # other kernel modules not in ramdisk
 PRODUCT_COPY_FILES += $(foreach module,\
-    $(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/galaxytab/modules/*.ko)),\
+    $(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/p1/modules/*.ko)),\
     $(module):system/lib/modules/$(notdir $(module)))
 
 # rfs converter
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxytab/prebuilt/sbin/fat.format:root/sbin/fat.format
+    device/samsung/p1/prebuilt/sbin/fat.format:root/sbin/fat.format
 
 # wifi
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxytab/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    device/samsung/p1/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/samsung/galaxytab/kernel
+    LOCAL_KERNEL := device/samsung/p1/kernel
 else
     LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -214,7 +214,7 @@ PRODUCT_COPY_FILES += \
 
 # copy the filesystem converter
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxytab/updater.sh:updater.sh
+	device/samsung/p1/updater.sh:updater.sh
 
 # See comment at the top of this file. This is where the other
 # half of the device-specific product definition file takes care

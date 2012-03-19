@@ -1,4 +1,4 @@
-$(call inherit-product, device/samsung/galaxytab/full_galaxytab.mk)
+$(call inherit-product, device/samsung/p1/full_galaxytab.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := GalaxyTab
