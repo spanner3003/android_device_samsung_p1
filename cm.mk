@@ -1,15 +1,17 @@
-$(call inherit-product, device/samsung/p1/full_galaxytab.mk)
-
 # Release name
 PRODUCT_RELEASE_NAME := GalaxyTab
 
+# Bootanimation
+TARGET_BOOTANIMATION_NAME := horizontal-1024x600
+
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
-$(call inherit-product, vendor/cm/config/gsm.mk)
+# Inherit device configuration
+$(call inherit-product, device/samsung/p1/full_p1.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := cm_galaxytab
-PRODUCT_DEVICE := galaxytab
+PRODUCT_NAME := cm_p1
+PRODUCT_DEVICE := p1
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-P1000
